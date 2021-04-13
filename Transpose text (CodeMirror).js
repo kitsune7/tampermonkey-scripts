@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Adds a hotkey to transpose text
 // @author       Christopher Bradshaw
-// @match        https://codepen.io/happikitsune/pen/*
+// @match        https://codepen.io/*pen/*
 // @grant        none
 // ==/UserScript==
 
