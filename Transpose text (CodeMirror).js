@@ -5,11 +5,13 @@
 // @description  Adds a hotkey to transpose text
 // @author       Christopher Bradshaw
 // @match        https://codepen.io/*pen/*
+// @match        https://gist.github.com
+// @match        https://gist.github.com/*/edit
 // @grant        none
 // ==/UserScript==
+'use strict';
 
 (function() {
-  'use strict';
   const codeMirrors = Array.from(document.querySelectorAll('.CodeMirror'));
   codeMirrors.forEach(textarea =>
     textarea.addEventListener('keydown', handleKeypress)

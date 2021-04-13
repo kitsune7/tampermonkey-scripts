@@ -5,6 +5,7 @@
 // @description  Close the cookies popup on Stack Overflow
 // @author       Christopher Bradshaw
 // @match        https://stackoverflow.com/*
+// @match        https://*.stackexchange.com/*
 // @require      https://bit.ly/monkey-utils
 // @grant        none
 // ==/UserScript==
