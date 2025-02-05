@@ -4,16 +4,16 @@
 // @version      0.1
 // @description  Auto login to neopets
 // @author       Christopher Bradshaw
-// @match        http://www.neopets.com/login/index.phtml*
+// @match        https://www.neopets.com/login/index.phtml*
 // @grant        none
 // ==/UserScript==
 
 (function () {
-  'use strict'
+  'use strict';
 
   /* ------------------------------ Main code ------------------------------ */
-  const loginDelay = 4000
+  const loginDelay = 4000;
   setTimeout(() => {
-    document.querySelector('.welcomeLoginButton').click()
-  }, loginDelay)
-})()
+    document.querySelector('.welcomeLoginButton').click();
+  }, loginDelay);
+})();
