@@ -10,7 +10,6 @@
 // ==/UserScript==
 
 (function () {
-  'use strict';
   // TODO: Add advanced options like case-insensitive search, regex, added lines/removed lines only, file type filter, etc.
   const searchBarContainerId = 'string-filter-searchbar';
   const diffContainerSelector = '.js-diff-progressive-container';
@@ -19,8 +18,6 @@
 
   setReadyHandler(diffContainerSelector, (targetElement) => {
     if (document.getElementById(searchBarContainerId) === null) {
-      const parentElement = document.querySelector(diffContainerSelector);
-
       const searchContainer = document.createElement('div');
       searchContainer.id = searchBarContainerId;
       searchContainer.style.marginBottom = '10px';
@@ -42,7 +39,7 @@
       searchContainer.innerHTML = searchSvg;
       searchContainer.appendChild(searchBar);
       searchContainer.appendChild(message);
-      parentElement.insertBefore(searchContainer, parentElement.firstChild);
+      targetElement.insertBefore(searchContainer, targetElement.firstChild);
 
       searchBar.addEventListener(
         'input',
@@ -63,14 +60,6 @@
 
   function searchFileContents(filterStr) {
     const fileElements = Array.from(document.querySelectorAll('div[data-details-container-group="file"]'));
-    console.log('filterStr:', filterStr);
-
-    const hasFilterStr = (fileElement) => {
-      const textContent = Array.from(fileElement.querySelectorAll('.blob-code-inner.blob-code-marker'))
-        .map((blobElement) => blobElement.textContent)
-        .join('\n');
-      return textContent.includes(filterStr);
-    };
 
     const resetInlineStyles = (element) => (element.style.cssText = '');
 
