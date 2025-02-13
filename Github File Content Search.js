@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Inserts a search bar on PR reviews that lets you filter files based on their contents
 // @author       You
-// @match        https://github.com/*/files
+// @match        https://github.com/*
 // @require      https://gist.githubusercontent.com/kitsune7/cd317ed0bda4e96b81febaf11b188d6d/raw/685a67ba681e9914a7e1a3ca52b7d4fc42077c39/monkey-utils.js
 // @grant        none
 // ==/UserScript==
