@@ -19,6 +19,7 @@
     { searchPrefix: 'github', domain: 'https://github.com/' },
     { searchPrefix: 'gh', domain: 'https://github.com/' },
     { searchPrefix: 'go', domain: 'https://pkg.go.dev/' },
+    { searchPrefix: 'py', domain: 'https://pypi.org/' },
   ];
 
   const shortestPrefix = Math.min(...redirects.map((redirect) => redirect.searchPrefix.length));
