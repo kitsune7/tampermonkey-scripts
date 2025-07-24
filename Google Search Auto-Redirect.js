@@ -2,6 +2,7 @@
 // @name         Google Search Auto-Redirect
 // @namespace    http://tampermonkey.net/
 // @version      0.1
+// @author       Christopher Bradshaw
 // @description  Automatically navigate to the first relevant result in some scenarios
 // @match        https://www.google.com/search?*
 // @grant        none
