@@ -1,0 +1,20 @@
+{
+  "name": "tampermonkey-scripts",
+  "version": "1.0.0",
+  "description": "TypeScript userscripts that compile to TamperMonkey format",
+  "type": "module",
+  "scripts": {
+    "build": "rollup --config",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/node": "^24.5.2",
+    "glob": "^11.0.3",
+    "prettier": "^3.6.2",
+    "rollup": "^4.52.2",
+    "tslib": "^2.8.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

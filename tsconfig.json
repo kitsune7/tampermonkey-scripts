@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "types": ["node"],
+    "lib": ["DOM", "ESNext"],
+    "removeComments": true
+  },
+  "include": ["src/**/*.ts", "global.d.ts"],
+  "exclude": ["node_modules", "dist", "archive"]
+}
