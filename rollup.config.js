@@ -18,25 +18,19 @@ const entries = globSync('src/*.ts').map((file) => {
   return { name, file, fullPath }
 })
 
-// Create input object for Rollup
-const input = Object.fromEntries(entries.map(({ name, fullPath }) => [name, fullPath]))
-
-export default {
-  input,
+// Export an array of separate configurations, one per source file
+// This prevents code-splitting and allows IIFE format
+export default entries.map(({ name, fullPath }) => ({
+  input: fullPath,
   output: {
-    dir: 'dist',
+    file: `dist/${name}.js`,
     format: 'iife',
     // Add the UserScript metadata as a banner for each output file
-    banner(chunk) {
-      // Find the corresponding source file for this chunk
-      const entry = entries.find((e) => e.name === chunk.name)
-      if (entry) {
-        const meta = extractUserscriptMeta(entry.fullPath)
-        // Add a newline after the metadata if it exists
-        return meta ? meta + '\n' : ''
-      }
-      return ''
+    banner: () => {
+      const meta = extractUserscriptMeta(fullPath)
+      // Add a newline after the metadata if it exists
+      return meta ? meta + '\n' : ''
     },
   },
   plugins: [typescript()],
-}
+}))
